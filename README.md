@@ -1,12 +1,50 @@
-# macro-alpha-signals
+# Macro Alpha Signals (Systematic Strategy)
 
-This project explores macro-driven systematic strategies using:
+This project implements a macro-driven systematic trading strategy using:
 
-- Machine learning models
-- Bayesian inference
-- Regime-switching models
+- S&P 500 returns
+- VIX (volatility index)
+- US Unemployment rate (FRED)
 
-The goal is to better understand how macroeconomic variables can generate predictive signals for financial markets under uncertainty.
+## Strategy intuition
+
+The model captures macro regimes:
+
+- Risk-on: low volatility + positive momentum
+- Risk-off: high volatility or deteriorating labor market
+
+## Features engineered
+
+- VIX z-score (rolling normalization)
+- 3-month momentum
+- Unemployment rate changes
+
+## Results
+
+| Metric | Value |
+|------|------|
+| Annual Return | 1.16% |
+| Volatility | Low |
+| Sharpe Ratio | 0.59 |
+| Max Drawdown | ~-5% |
+
+## Key takeaways
+
+- Macro signals contain predictive power
+- Filtering improves Sharpe significantly
+- Simple models can generate stable risk-adjusted returns
+
+## Next improvements
+
+- Add yield curve (10Y-2Y)
+- Add inflation (CPI)
+- Regime-switching models (HMM)
+- Machine learning signals
+
+## Author
+
+Larissa Nawo  
+Quantitative Finance / Macro Risk / Data Science
 
 ## Repository structure
 
