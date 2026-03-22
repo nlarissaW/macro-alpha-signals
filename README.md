@@ -1,57 +1,52 @@
-# Macro Alpha Signals (Systematic Strategy)
+# Macro Alpha Signals
 
-This project implements a macro-driven systematic trading strategy using:
+A research-oriented GitHub project exploring macro-driven systematic trading signals using open financial and macroeconomic data.
+
+## Overview
+
+This repository develops a simple but structured macro strategy based on:
 
 - S&P 500 returns
-- VIX (volatility index)
-- US Unemployment rate (FRED)
+- VIX volatility regimes
+- US unemployment data from FRED
 
-## Strategy intuition
+The objective is to test whether macro and volatility conditions can improve risk-adjusted market timing.
 
-The model captures macro regimes:
+## Data sources
 
-- Risk-on: low volatility + positive momentum
-- Risk-off: high volatility or deteriorating labor market
+- Yahoo Finance (`^GSPC`, `^VIX`)
+- FRED (`UNRATE`)
 
-## Features engineered
+## Methodology
 
-- VIX z-score (rolling normalization)
-- 3-month momentum
-- Unemployment rate changes
+The current prototype includes:
 
-## Results
+1. Data download and cleaning
+2. Feature engineering
+   - VIX z-score
+   - 3-month momentum
+   - Unemployment change
+3. Signal construction
+   - Risk-on regime
+   - Risk-off regime
+4. Backtesting
+5. Performance evaluation
+
+## Current results
 
 | Metric | Value |
-|------|------|
+|---|---:|
 | Annual Return | 1.16% |
-| Volatility | Low |
 | Sharpe Ratio | 0.59 |
-| Max Drawdown | ~-5% |
+| Max Drawdown | -4.9% |
 
-## Key takeaways
+## Key insight
 
-- Macro signals contain predictive power
-- Filtering improves Sharpe significantly
-- Simple models can generate stable risk-adjusted returns
-
-## Next improvements
-
-- Add yield curve (10Y-2Y)
-- Add inflation (CPI)
-- Regime-switching models (HMM)
-- Machine learning signals
-
-## Author
-
-Larissa Nawo  
-Quantitative Finance / Macro Risk / Data Science
+Tighter signal filtering improved the Sharpe ratio materially relative to the initial version, suggesting that simple macro regime definitions may already contain useful information for systematic allocation.
 
 ## Repository structure
 
 ```text
-data/
-notebooks/
-src/
-results/
-README.md
-draft_paper.pdf
+data/         Placeholder for datasets
+notebooks/    Research notebooks
+src/          Reusable Python code
