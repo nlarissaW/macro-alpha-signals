@@ -12,18 +12,21 @@ def main():
     # 2) Compute features
     df = compute_features(df)
 
-    # 3) Generate trading signal
+    # 3) Generate signal
     df = generate_signal(df)
 
-    # 4) Run backtest
+    # 4) Backtest
     df = backtest(df)
 
-    # 5) Compute performance metrics
+    # 5) Metrics
     metrics = performance_metrics(df)
 
-    print("\n===== Strategy Performance =====")
-    for k, v in metrics.items():
-        print(f"{k}: {v:.4f}")
+    print("\n===== Macro Alpha Strategy Performance =====")
+    print(f"Annual Return   : {metrics['return']:.4f}")
+    print(f"Annual Vol      : {metrics['vol']:.4f}")
+    print(f"Sharpe Ratio    : {metrics['sharpe']:.4f}")
+    print(f"Max Drawdown    : {metrics['max_dd']:.4f}")
+    print(f"Hit Ratio       : {metrics['hit_ratio']:.4f}")
 
 
 if __name__ == "__main__":
